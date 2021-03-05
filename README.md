@@ -5,7 +5,7 @@
   
   EmberJS 2.18
   
-  For Ember Readable Source Code:
+  For Ember Pre-Compiled Source Code:
   ```
   https://github.com/zoharsegal/myTasks-ember-source-Code
   ```
