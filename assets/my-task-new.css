@@ -1,0 +1,298 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css);
+
+body {
+  background: #f3f3f3;
+  font-family:Arial;
+  direction: rtl;
+}
+/*
+PC(not mobile) START
+ */
+@media not screen and (max-width: 600px) {
+  .bodyContent {
+    width:400px;
+    margin:auto;
+  }
+  .modalOutDialog {
+    width: 400px;
+    margin: auto;
+  }
+  .modalInDialog {
+    margin-inline-start: 27px;
+    width: 350px;
+  }
+}
+/*
+PC(not mobile) END
+ */
+
+/*
+Mobile START
+ */
+@media only screen and (max-width: 600px) {
+  .modalOutDialog {
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .modalInDialog {
+    width: 90%;
+    left: 5%;
+  }
+}
+/*
+Mobile END
+ */
+
+.header {
+  background-image: linear-gradient(#e3cf66, #db8901);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  direction: ltr;
+}
+.appTitle {
+  width: 52px;
+  padding-top: 10px;
+  font-weight: bold;
+  padding-inline-end: 6px;
+}
+.indexDiv {
+  padding:10px;
+}
+
+.footer {
+
+}
+.is-done {
+  text-decoration: line-through;
+  color: #948d84;
+}
+/*
+Dialog Popup START
+ */
+.posFixed {
+  position: absolute;
+}
+.modalOutDialog {
+  height:100%;
+  position: fixed;
+  z-index:99;
+  background-color: gray;
+  opacity: 0.7;
+  top:0;
+}
+.modalInDialog {
+  height: 200px;
+  position: fixed;
+  top: 150px;
+  background-color: #ffffff;
+  z-index: 999;
+}
+.modelHeader {
+  direction: ltr;
+  height:40px;
+  background-image: linear-gradient(#e3cf66, #db8901);
+}
+.modelHeaderClose {
+  font-size:20px;
+  margin: 10px;
+}
+.modelHeaderCloseDiv {
+  width:40px
+}
+.modelHeaderCloseDiv:hover {
+  cursor:pointer;
+  opacity: 0.8;
+}
+/*
+Dialog Popup END
+ */
+
+/*
+Input START
+ */
+.checkbox {
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox > span {
+  color: #1d171b;
+  position: absolute;
+  padding-top: 12px;
+  padding-inline-start: 10px;
+}
+
+.checkbox > input {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #34495E;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-inline-start: 10px;
+}
+
+.checkbox > input:checked {
+  border: 1px solid #727272;
+  background-color: #727272;
+}
+
+.checkbox > input:checked + span::before {
+  content: '';
+  display: block;
+  text-align: center;
+  color: #41B883;
+  position: absolute;
+  left: 0.7rem;
+  top: 0.2rem;
+}
+
+.checkbox > input:active {
+  border: 2px solid #34495E;
+}
+
+input[type=text],input[type=email],input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form {
+  padding:10px;
+}
+/*
+Input END
+ */
+
+.divLi {
+  display: flex;
+  width: 100%;
+}
+ul.taskList {
+  list-style-type: none;
+  padding-inline-start: 6px;
+  padding-inline-end: 6px;
+  height: 500px;
+  overflow-y: auto;
+}
+ul.taskList li {
+  height:40px;
+  border-bottom: 1px solid #000000;
+  display: flex;
+}
+ul.taskList li.liMixed {
+  background: #fefefe;
+}
+ul.taskList li.liMixed:nth-child(odd) {
+  background: #eefee1;
+}
+.actionList {
+  padding: 12px;
+  width:35px
+}
+.is-shared {
+  color:blue;
+}
+.liFixed {
+  background: #fefefe;
+}
+
+.appTitleLink {
+  text-decoration: none;
+  color:black;
+}
+.appTitleLink:hover {
+  opacity: 0.8;
+}
+.taskName {
+  padding-top: 12px;
+}
+.ulShares {
+  padding-inline-start: 0px;
+}
+
+/*
+Buttons START
+ */
+.appButtons {
+  flex-grow:1;
+  margin-inline-start: 6px;
+}
+.btnMenu {
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  background:linear-gradient(to bottom, #ffec64 5%, #f59b0a 100%);
+  background-color:#ffec64;
+  border-radius:6px;
+  border:1px solid #ffaa22;
+  display:inline-block;
+  cursor:pointer;
+  color:#333333;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffee66;
+  margin-top: 2px;
+}
+.btnMenu:hover {
+  background:linear-gradient(to bottom, #f59b0a 5%, #ffec64 100%);
+  background-color:#f59b0a;
+}
+.btnMenu:active {
+  position:relative;
+  top:1px;
+}
+.deleteTask {
+  padding-inline-start: 5px;
+}
+.deleteTask:hover {
+  cursor:pointer;
+  opacity: 0.6;
+}
+.shareTask {
+
+}
+.shareTask:hover {
+  cursor:pointer;
+  opacity: 0.6;
+}
+/*
+Buttons END
+ */
+
+.btnMargin10 {
+  margin-top: 10px;
+}
+.subToolBar {
+  direction: ltr;
+  padding-inline-start: 6px;
+}
+.totalSumOuter {
+  background-color: #ffffff;
+}
+.totalSum {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.totalsum__element{
+  flex-grow:1;
+}
+.tasksShareContainer {
+  height: 140px;
+  overflow-y: auto;
+}
