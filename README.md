@@ -23,10 +23,16 @@ CREATE DATABASE mytasks
 4.Open CMD and run
 
 ```
-CD /var/www/html (or whatever location you extracted the files)
+cd /var/www/html (or whatever location you extracted the files)
 ```
 
-5.In the CMD run:
+5.Run in CMD:
+
+```
+cd api
+```
+
+6.In the CMD run:
 
 ```
 php artisan migrate
