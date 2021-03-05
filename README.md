@@ -3,7 +3,7 @@
   
   Laravel 6.18
   
-  Ember 2.18
+  EmberJS 2.18
   
   For Ember Readable Source Code:
   ```
