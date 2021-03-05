@@ -3,7 +3,7 @@
   Laravel 6.18
   Ember 2.18
   
-  For Ember Source Code:
+  For Ember Readable Source Code:
   ```
   https://github.com/zoharsegal/myTasks-ember-source-Code
   ```
