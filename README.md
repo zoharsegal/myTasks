@@ -8,7 +8,10 @@
 
 # Installation
 
-1.git clone https://github.com/zoharsegal/myTasks
+1.Run in CMD:
+```
+git clone https://github.com/zoharsegal/myTasks
+```
 
 2.Copy myTasks content to your main IIS/apache server
 
