@@ -113,7 +113,11 @@ class TaskController extends Controller {
             if (count($user)>0) {
                 DB::update('UPDATE tasks SET `isDone` = ? WHERE `id` = ?', [$isDone,$id]);
                 //updating shares
-                $shares=$parms->data->attributes->shares;
+                if ($parms->data->attributes->shares) {
+                    $shares=$parms->data->attributes->shares;
+                } else {
+                    $shares=array();
+                }
                 $usersToDeleteShare="";
                 $usersToAddShare="";
                 foreach ($shares as $share) {
