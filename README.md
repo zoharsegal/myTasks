@@ -35,7 +35,7 @@ CREATE DATABASE mytasks
 4.Open CMD and run
 
 ```
-cd /var/www/html (or whatever location you extracted the files)
+cd /var/www/html (or whatever location you extracted the files to)
 ```
 
 5.Run in CMD:
