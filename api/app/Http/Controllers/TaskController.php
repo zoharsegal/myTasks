@@ -30,8 +30,6 @@ class TaskController extends Controller {
                         ,`isDone`
                         ,(CASE WHEN (SELECT COUNT(1) FROM `tasksharing` WHERE `taskId`=T.id)=0 THEN 0 ELSE 1 END) `isShared`
                         ,(CASE WHEN TS.`userId` IS NULL THEN 1 ELSE 0 END) `isOwner`
-                        ,SUM(CASE WHEN `isDone`=1 THEN 1 ELSE 0 END) OVER(PARTITION BY 1) `doneCount`
-                        ,SUM(CASE WHEN `isDone`=0 THEN 1 ELSE 0 END) OVER(PARTITION BY 1) `notDoneCount`
                         ,TS1.`shares`
                  FROM `tasks` T LEFT OUTER JOIN `tasksharing` TS
                  ON T.id = TS.`taskId`
@@ -55,7 +53,7 @@ class TaskController extends Controller {
         if ($taskId) {
             $tasks = DB::select($query . $singleRowQuery . ' ORDER BY `insertDate`', [$userId,$userId,$userId,$taskId]);
             if (count($tasks)>0) {
-                $singleArray=array("id" => $tasks[0]->id,"type" => "tasks","attributes" => array("task-name" => $tasks[0]->taskName,"is-done" => $tasks[0]->isDone,"is-shared" => $tasks[0]->isShared,"done-count" => $tasks[0]->doneCount,"not-done-count" => $tasks[0]->notDoneCount,"is-owner" => $tasks[0]->isOwner,"shares" => json_decode($tasks[0]->shares)));
+                $singleArray=array("id" => $tasks[0]->id,"type" => "tasks","attributes" => array("task-name" => $tasks[0]->taskName,"is-done" => $tasks[0]->isDone,"is-shared" => $tasks[0]->isShared,"is-owner" => $tasks[0]->isOwner,"shares" => json_decode($tasks[0]->shares)));
             } else {
                 $singleArray=array();
             }
@@ -65,7 +63,7 @@ class TaskController extends Controller {
             $tasks = DB::select($query . ' ORDER BY `insertDate`', [$userId,$userId,$userId]);
             $jsonArray=array();
             foreach ($tasks as $task) {
-                array_push($jsonArray,array("id" => $task->id,"type" => "tasks","attributes" => array("task-name" => $task->taskName,"is-done" => $task->isDone,"is-shared" => $task->isShared,"done-count" => $task->doneCount,"not-done-count" => $task->notDoneCount,"is-owner" => $task->isOwner,"shares" => json_decode($task->shares))));
+                array_push($jsonArray,array("id" => $task->id,"type" => "tasks","attributes" => array("task-name" => $task->taskName,"is-done" => $task->isDone,"is-shared" => $task->isShared,"is-owner" => $task->isOwner,"shares" => json_decode($task->shares))));
             }
             $finalJson=array("status" => "OK","data" => $jsonArray);
         }
