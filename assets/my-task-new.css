@@ -89,17 +89,24 @@ Dialog Popup START
   background-color: #ffffff;
   z-index: 999;
 }
+.modalTitle {
+  flex-grow: 1;
+  line-height: 40px;
+  font-weight: bold;
+  text-align: center;
+}
 .modelHeader {
-  direction: ltr;
+  direction: inherit;
   height:40px;
   background-image: linear-gradient(#e3cf66, #db8901);
+  display: flex;
 }
 .modelHeaderClose {
   font-size:20px;
   margin: 10px;
 }
 .modelHeaderCloseDiv {
-  width:40px
+
 }
 .modelHeaderCloseDiv:hover {
   cursor:pointer;
